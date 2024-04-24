@@ -1,0 +1,41 @@
+:root {
+    --primary: #8E7AB5;
+    --secondary: #EEA5A6;
+    --success: #6fbf71;
+    --info: #00bcd4;
+    --warning: #e47943;
+    --danger: #f44336;
+    --light: #FFF7F1;
+    --dark: #070F2B;
+}
+
+.bg-primary{
+    background-color: var(--primary) !important;
+}
+.bg-white{
+    background-color: #fff !important;
+}
+.text-white{
+    color: white !important;
+}
+
+.bg-success{
+    background-color: var(--success);
+}
+
+.bg-error{
+    background-color: var(--warning);
+}
+.Button {
+    background-image: linear-gradient(#9E8AC5, #8E7AB5, #7E6A95);
+    color: white; /* Ensures text is readable */
+    border: none; /* Optional: removes border */
+    border-radius: 5px; /* Optional: rounds the corners */
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.Button:hover {
+    background-image: linear-gradient(#7E6A95, #8E7AB5, #9E8AC5); /* Inverted gradient on hover */
+}
