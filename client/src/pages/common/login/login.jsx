@@ -1,9 +1,27 @@
 import React from 'react'
-import { Form, Input} from "antd";
+import {Form, Input, message} from "antd";
 import {Button} from "antd";
 import {EyeInvisibleOutlined, EyeTwoTone, LockOutlined, LoginOutlined} from "@ant-design/icons";
+import {loginUser} from "../../../api/users";
 
 const Login = () => {
+
+    const onFinish = async (values) => {
+        try {
+            const response = await loginUser(values);
+            console.log(values)
+            if (response.success) {
+                message.success('User logged in successfully!');
+                console.log("user logged in!")
+            }else{
+                message.info(response.message);
+                console.log("inside else")
+            }
+        } catch (error) {
+            message.error('Inputs missing or incorrect!');
+        }
+    }
+
     return (
         <div className="flex justify-center items-center h-screen w-screen bg-primary">
             <div className="card w-400 p-3 bg-white">
@@ -13,7 +31,7 @@ const Login = () => {
 
                     </div>
                     <div className="divider"></div>
-                    <Form layout="vertical" className="mt-2" >
+                    <Form layout="vertical" className="mt-2" onFinish={onFinish}>
                         <Form.Item name="email" label="Email">
                             <Input type="text" suffix={<LockOutlined />} placeholder="Email" />
                         </Form.Item>
@@ -28,7 +46,7 @@ const Login = () => {
                             <Button
                                 className="mt-1 Button"
                                 type="primary"
-
+                                htmlType="submit"
                             >
                                 <LoginOutlined />Login  🚀
                             </Button>

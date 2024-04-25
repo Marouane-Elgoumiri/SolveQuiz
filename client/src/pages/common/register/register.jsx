@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Input} from "antd";
+import {Form, Input, message} from "antd";
 import {Button} from "antd";
 import {
     EyeInvisibleOutlined,
@@ -7,10 +7,27 @@ import {
     LockOutlined,
     LoginOutlined,
     UserAddOutlined,
-    UserOutlined
 } from "@ant-design/icons";
+import {registerUser} from "../../../api/users";
 
-const Login = () => {
+const Register = () => {
+
+    const onFinish = async (values) => {
+        try {
+            const response = await registerUser(values);
+            console.log(values)
+            if (response.success) {
+                message.success('User registered successfully!');
+                console.log("user registered")
+            }else{
+                message.info(response.message);
+                console.log("inside else")
+            }
+        } catch (error) {
+            message.error('Inputs missing or incorrect!');
+        }
+    }
+
     return (
         <div className="flex justify-center items-center bg-primary h-screen w-screen ">
             <div className="card w-400 p-3 bg-white">
@@ -20,7 +37,7 @@ const Login = () => {
 
                     </div>
                     <div className="divider"></div>
-                    <Form layout="vertical" className="mt-2" >
+                    <Form layout="vertical" className="mt-2" onFinish={onFinish}>
                         <Form.Item name="email" label="Email">
                             <Input type="text" suffix={<LockOutlined />} placeholder="Email" />
                         </Form.Item>
@@ -39,6 +56,7 @@ const Login = () => {
                                 className="Button mt-1"
                                 type="primary"
                                 color="primary"
+                                htmlType="submit"
                             >
                                 <LoginOutlined/>Create an account! 🚀
                             </Button>
@@ -52,4 +70,4 @@ const Login = () => {
         </div>
     );
 }
-export default Login
+export default Register;
