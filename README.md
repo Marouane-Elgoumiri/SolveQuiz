@@ -1,4 +1,4 @@
-# SolveQuiz a Quiz App with MERN stack
+![Screenshot from 2024-04-27 17-12-38](https://github.com/Marouane-Elgoumiri/SolveQuiz/assets/96888594/6ec1ed70-49ce-4b9c-9737-6b6a79223e4e)# SolveQuiz a Quiz App with MERN stack
 
 <div align="center">
   
@@ -14,6 +14,13 @@
 
 </div>
 
-## Current progress ⌛ 20%:
+## Current progress ⌛ 30%:
 
-![imgonline-com-ua-twotoone-hXW6zzMM4W0](https://github.com/Marouane-Elgoumiri/SolveQuiz/assets/96888594/1dc08a84-257a-4f45-bb68-77a1265f98d9)
+## Hello page:
+![Screenshot from 2024-04-27 17-12-27](https://github.com/Marouane-Elgoumiri/SolveQuiz/assets/96888594/87052288-d842-45d8-8090-19db2cdb0625)
+
+## Login:
+![Screenshot from 2024-04-27 17-12-43](https://github.com/Marouane-Elgoumiri/SolveQuiz/assets/96888594/4b117128-b3ef-401a-a5f3-3411dce27d10)
+
+## Register:
+![Screenshot from 2024-04-27 17-12-38](https://github.com/Marouane-Elgoumiri/SolveQuiz/assets/96888594/b2d43e7f-661d-4f99-8213-1bb770137ae2)
