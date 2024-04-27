@@ -8,10 +8,7 @@ const usersRoute = require('./routes/usersRoute');
 
 
 app.use(express.json());
-app.use((err, req, res, next) => {
-    console.error(err.stack)
-    res.status(500).send('Something broke!')
-})
+
 
 app.use("/api/users", usersRoute);
 

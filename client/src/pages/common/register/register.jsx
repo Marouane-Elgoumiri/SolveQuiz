@@ -17,10 +17,22 @@ const Register = () => {
             const response = await registerUser(values);
             console.log(values)
             if (response.success) {
-                message.success('User registered successfully!');
+                message.success({
+                    content: 'User Registered successfully!',
+                    style: {
+                        fontSize: '16px',
+                        padding: '10px',
+                    }
+                });
                 console.log("user registered")
             }else{
-                message.info(response.message);
+                message.info({
+                    content: 'Invalid or missing inputs',
+                    style: {
+                        fontSize: '16px',
+                        padding: '10px',
+                    }
+                });
                 console.log("inside else")
             }
         } catch (error) {

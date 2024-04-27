@@ -1,5 +1,5 @@
 :root {
-    --primary: #8E7AB5;
+    --primary: #9934e3;
     --secondary: #EEA5A6;
     --success: #6fbf71;
     --info: #00bcd4;
@@ -7,6 +7,25 @@
     --danger: #f44336;
     --light: #FFF7F1;
     --dark: #070F2B;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+@keyframes backgroundAnimation {
+    0% {
+        background-color: var(--primary);
+    }
+    50% {
+        background-color: var(--secondary);
+    }
+    100% {
+        background-color: var(--primary);
+    }
+}
+
+.bg-primary1 {
+    animation: backgroundAnimation 5s infinite;
 }
 
 .bg-primary{
@@ -28,14 +47,38 @@
 }
 .Button {
     background-image: linear-gradient(#9E8AC5, #8E7AB5, #7E6A95);
-    color: white; /* Ensures text is readable */
-    border: none; /* Optional: removes border */
-    border-radius: 5px; /* Optional: rounds the corners */
+    color: white;
+    border: none;
+    border-radius: 5px;
     display: inline-block;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    transition: background-color 0.3s;
 }
 
 .Button:hover {
-    background-image: linear-gradient(#7E6A95, #8E7AB5, #9E8AC5); /* Inverted gradient on hover */
+    background-image: linear-gradient(#7E6A95, #8E7AB5, #9E8AC5);
 }
+
+.Button2 {
+    background: linear-gradient(to right, yellow, orange);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.Button2:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+}
+

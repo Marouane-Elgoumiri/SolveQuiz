@@ -11,14 +11,34 @@ const Login = () => {
             const response = await loginUser(values);
             console.log(values)
             if (response.success) {
-                message.success('User logged in successfully!');
+                message.success({
+                    content: 'User logged in successfully!',
+                    style: {
+                        fontSize: '16px',
+                        padding: '10px',
+                    }
+                });
+                localStorage.setItem("token", response.data);
+                window.location.href = "/dashboard";
                 console.log("user logged in!")
             }else{
-                message.info(response.message);
+                message.info({
+                    content: response.message,
+                    style: {
+                        fontSize: '16px',
+                        padding: '10px',
+                    }
+                });
                 console.log("inside else")
             }
         } catch (error) {
-            message.error('Inputs missing or incorrect!');
+            message.error({
+                content: 'Inputs missing or incorrect!',
+                style: {
+                    fontSize: '16px',
+                    padding: '10px',
+                }
+            });
         }
     }
 
