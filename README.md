@@ -1,4 +1,4 @@
-![Screenshot from 2024-04-27 17-12-38](https://github.com/Marouane-Elgoumiri/SolveQuiz/assets/96888594/6ec1ed70-49ce-4b9c-9737-6b6a79223e4e)# SolveQuiz a Quiz App with MERN stack
+# SolveQuiz a Quiz App with MERN stack
 
 <div align="center">
   
