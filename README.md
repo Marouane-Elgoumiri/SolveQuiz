@@ -14,7 +14,9 @@
 
 </div>
 
-## Current progress ⌛ 30%:
+## Current progress ⌛ 40%:
+## Currently working on the Exams page:
+![combined](https://github.com/Marouane-Elgoumiri/SolveQuiz/assets/96888594/61d1f460-0308-493e-baa8-af157a5d9f4c)
 
 ## Hello page:
 ![Screenshot from 2024-04-27 17-12-27](https://github.com/Marouane-Elgoumiri/SolveQuiz/assets/96888594/87052288-d842-45d8-8090-19db2cdb0625)
