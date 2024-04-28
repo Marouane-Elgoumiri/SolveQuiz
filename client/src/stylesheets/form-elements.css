@@ -23,6 +23,8 @@ button {
 
 .primary-outlined-btn {
     background-color: white;
+    margin-right: 30px;
+    padding: 10px 30px;
     color: var(--primary);
-    border: 2px solid var(--primary);
+    border: 3px solid var(--primary);
 }

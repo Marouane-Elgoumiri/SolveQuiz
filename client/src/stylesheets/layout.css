@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .layout {
     padding: 15px;
     width: 100vw;
@@ -7,27 +11,29 @@
 .sidebar {
     background-color: var(--primary);
     padding: 10px;
-    border-radius: 5px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 10px;
+    height: calc(100vh - 50px);
 }
 
 .menu-item {
     display: flex;
     align-items: center;
-    padding: 8px 30px;
+    padding: 12px 30px;
     margin: 5px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    gap: 15px;
-    color: white !important;
+    gap: 10px;
+    color: white;
 }
+.menu-item:hover {
+    background-color: var(--secondary);
+    color: black;
+    border-radius: 10px;
 
+}
 .active-menu-item{
-    border: 2px solid white;
-    border-radius: 5px;
+    border: 2px solid;
+    border-radius: 10px;
 }
 
 .body {
@@ -37,8 +43,38 @@
 .header {
     background-color: var(--primary);
     color: white !important;
-    width: 100% !important;
-    padding: 15px;
-    border-radius: 5px;
-    align-items: center !important;
+    width: calc(100% - 30px);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 50px;
+}
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.ri-close-large-line, .ri-menu-line {
+    font-size: 30px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.ri-close-large-line, .ri-menu-line {
+    transition: transform 0.3s ease-in-out;
+}
+
+.ri-close-large-line:hover, .ri-menu-line:hover {
+    transform: scale(1.3);
+}
+
+.ri-close-large-line:active, .ri-menu-line:active {
+    transform: scale(0.5);
 }

@@ -45,7 +45,7 @@ const Register = () => {
             <div className="card w-400 p-3 bg-white">
                 <div className="flex flex-col">
                     <div className="flex">
-                        <h1 className="text-2xl">Register to SolveQuiz<i className="ri-login-circle-line"></i></h1>
+                        <h1 className="text-2xl">Register to SolveQuiz</h1>
 
                     </div>
                     <div className="divider"></div>
