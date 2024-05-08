@@ -4,7 +4,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const BlacklistedToken = require('../models/BlacklistedToken')
 const authMiddleware = require('../middlewares/authMiddleware');
-const asyncHandler = require('express-async-handler')
 //user Registration
 
 router.post("/register", async (req, res) => {

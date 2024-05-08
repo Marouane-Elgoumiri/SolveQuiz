@@ -5,21 +5,23 @@ import PageTitle from "../PageTitle";
 
 function Home() {
     return (
-
         <div>
-            <PageTitle title="Home Page" />
-            <Breadcrumb
-                items={[
-                    {
-                        href: '/dashboard',
-                        title: <HomeOutlined />,
-                    },
+            <div>
+                <PageTitle title="Home Page" />
+                <Breadcrumb
+                    items={[
+                        {
+                            href: '/dashboard',
+                            title: <HomeOutlined />,
+                        },
 
-                    {
-                        title: 'Home',
-                    },
-                ]}
-            />
+                        {
+                            title: 'Home',
+                        },
+                    ]}
+                />
+            </div>
+                <div className="divider"></div>
         </div>
     );
 }

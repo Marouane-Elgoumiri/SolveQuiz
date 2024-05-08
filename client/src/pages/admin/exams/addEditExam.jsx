@@ -1,16 +1,27 @@
 import React from 'react';
 import PageTitle from "../../../components/PageTitle";
-import {Breadcrumb, Button, Col, Form, Input, InputNumber, Row, Select} from "antd";
+import {Breadcrumb, Button, Col, Form, Input, InputNumber, message, Row, Select} from "antd";
 import {BookOutlined, ClockCircleOutlined, HomeOutlined, NumberOutlined, UserOutlined} from "@ant-design/icons";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {addExam} from "../../../api/exams";
 const { Option } = Select;
 
 function AddEditExam(props) {
     const [form] = Form.useForm();
-
-    const handleSubmit = (values) => {
-        console.log('Received values of form:', values);
-
+    const navigate = useNavigate();
+    const handleSubmit = async (values) => {
+        try {
+            let response;
+            response = await addExam(values);
+            if(response.success){
+                message.success(response.message);
+                navigate("/admin/exams");
+            }else{
+                message.error(response.message);
+            }
+        }catch (e) {
+            message.error(e.message);
+        }
     };
 
     return (
@@ -38,11 +49,13 @@ function AddEditExam(props) {
                     ]}
                 />
             </div>
+            <div className="divider"></div>
             <div className="mt-2 mr-2">
                 <Form
                     form={form}
                     layout="vertical"
                     size="large"
+                    onFinish={handleSubmit}
                 >
                     <Form.Item
                         label="Exam name"
@@ -63,7 +76,9 @@ function AddEditExam(props) {
                             >
                                 <Option value="math">Math</Option>
                                 <Option value="science">Science</Option>
-                                <Option value="history">History</Option>
+                                <Option value="development">Development</Option>
+                                <Option value="software">IT Software</Option>
+                                <Option value="security">Security & Network</Option>
                             </Select>
                         </Form.Item>
                     <Row gutter={9}>

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {getUserInfo} from "../api/users";
 import {useEffect} from "react";
-import {Image, message} from "antd";
+import {message} from "antd";
 import {useDispatch, useSelector} from "react-redux";
 import {SetUser} from "../redux/usersSlice";
 import {useNavigate} from "react-router-dom";
@@ -98,15 +98,23 @@ function ProtectedRoute({children}) {
                     setMenu(userMenu);
                 }
             }else{
+                console.log("i'm here!")
                 message.error(response.message)
             }
         }catch (e) {
+            navigate("/login")
             message.error(e.message );
         }
     }
-    useEffect(()=>{
-        getUserData();
-    },[])
+
+    useEffect(() => {
+        if (localStorage.getItem("token")) {
+            getUserData();
+        } else {
+            navigate("/login");
+        }
+    }, []);
+
     const isActiveOrNot = (paths)=>{
         if(paths.includes(activeRoute)){
             return true;
